@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import MenuItemCard from "./components/MenuItemCard.jsx";
 import OrderList from "./components/OrderList.jsx";
+import burgerImg from "./assets/images/burger.png";
+import friesImg from "./assets/images/fries.png";
+import pizzaImg from "./assets/images/pizza.jpg";
 import "./App.css";
 
 function App() {
@@ -16,21 +19,21 @@ function App() {
       title: "Burger",
       description: "A juicy burger with cheese.",
       price: 79.99,
-      imageUrl: "https://placehold.co/150",
+      imageUrl: burgerImg,
     },
     {
       id: 2,
       title: "Pizza",
       description: "Classic cheese pizza.",
       price: 99.99,
-      imageUrl: "https://placehold.co/150",
+      imageUrl: pizzaImg,
     },
     {
       id: 3,
       title: "Fries",
       description: "Crispy golden french fries.",
       price: 59.99,
-      imageUrl: "https://placehold.co/150",
+      imageUrl: friesImg,
     },
   ]);
 
