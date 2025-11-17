@@ -1,42 +1,211 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* -------------------------
+   GENERAL APP LAYOUT
+-------------------------- */
+
+.App {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  /* ❗ REMOVE the white background — this caused the bug */
+  background: none;
+  color: inherit;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.light {
+  background: #ffffff;
+  color: #000000;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark {
+  background: #1a1a1a;
+  color: #f3f3f3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* -------------------------
+   HEADER
+-------------------------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.header button {
+  padding: 8px 12px;
+  border: 1px solid #666;
+  border-radius: 6px;
+  cursor: pointer;
+  background: white;
+}
+
+.dark .header button {
+  background: #333;
+  color: #f3f3f3;
+  border-color: #888;
+}
+
+.header button:hover {
+  opacity: 0.8;
+}
+
+/* -------------------------
+   MENU CARDS
+-------------------------- */
+
+.menu-container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .card {
-  padding: 2em;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  background: white;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.15);
+}
+
+.dark .card {
+  background: #2d2d2d;
+  border-color: #444;
+  box-shadow: none;
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+/* -------------------------
+   CARD TEXT
+-------------------------- */
+
+.card-body h3 {
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.dark .description {
+  color: #bbb;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* -------------------------
+   ADD BUTTON
+-------------------------- */
+
+.btn-add {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: bold;
+}
+
+.btn-add:hover {
+  background: #0056b3;
+}
+
+.dark .btn-add {
+  background: #555;
+}
+
+.dark .btn-add:hover {
+  background: #777;
+}
+
+/* -------------------------
+   ORDER SECTION
+-------------------------- */
+
+.order-container {
+  margin-top: 50px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.dark .order-container {
+  background: #2a2a2a;
+  border-color: #555;
+}
+
+.order-container h2 {
+  margin-bottom: 20px;
+}
+
+/* -------------------------
+   ORDER TABLE
+-------------------------- */
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.order-table th,
+.order-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.order-table th {
+  background: #f0f0f0;
+}
+
+.dark .order-table th {
+  background: #333;
+}
+
+.qty {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* -------------------------
+   TOTAL
+-------------------------- */
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
 }
